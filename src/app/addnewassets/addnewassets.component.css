@@ -1,0 +1,28 @@
+input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color:white;
+  }
+
+body{
+  background-image: url('https://media.istockphoto.com/photos/businessman-working-with-financial-report-charts-business-analytics-picture-id1199010148?b=1&k=6&m=1199010148&s=170667a&w=0&h=KIaNeNAwqNQbVTuYjMVfabvPu-odZNlXuWPj-LguAsM=');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+  width:1366px;height:569px;
+}
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: DarkSalmon;
+  color: white;
+}
+
+h1{
+  color:white;
+  padding-top: 20px;
+  text-align:center;
+}

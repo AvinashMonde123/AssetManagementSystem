@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<ul class="nav">
+    <li class="nav-item ">
+    <a class="nav-link text-white" routerLink="home">ASSET MANAGEMENT SYSTEM</a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link text-white" id="b" routerLink="aboutus" *ngIf="!isCustomerLoggedIn() && !isAdminLoggedIn()">ABOUT US</a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link text-white" routerLink="userprofile" *ngIf="isCustomerLoggedIn()">USER PROFILE</a>
+  </li>
+   <li class="nav-item ">
+    <a class="nav-link text-white" routerLink="currentassets" *ngIf="isAdminLoggedIn() ">CURRENT ASSETS</a>
+  </li>
+   <li class="nav-item ">
+    <a class="nav-link text-white" routerLink="addnewassets" *ngIf="isAdminLoggedIn() ">ADD NEW ASSET</a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link text-white" id="a" routerLink="login" *ngIf="!isCustomerLoggedIn() && !isAdminLoggedIn()">LOGIN</a>
+  </li>
+   <li class="nav-item ">
+    <a class="nav-link text-white" routerLink="generatereport" *ngIf="isAdminLoggedIn()">GENERATE REPORT</a>
+  </li>
+   <li class="nav-item ">
+    <a class="nav-link text-white" routerLink="userassets" *ngIf="isCustomerLoggedIn()">ASSETS</a>
+  </li>
+  <button type="submit" class="btn btn-primary" (click)="userLogout()" id="user" *ngIf="isCustomerLoggedIn()">LOGOUT</button>
+   <button type="submit" class="btn btn-primary" (click)="adminLogout()" id="admin" *ngIf="isAdminLoggedIn()">LOGOUT</button>
+</ul>
+</nav>
+<router-outlet></router-outlet>
+
+
+
+

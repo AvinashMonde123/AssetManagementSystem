@@ -1,0 +1,18 @@
+ <div class="card offset-md-4 col-md-4 mt-5">  
+   <div class="card-body"> 
+ <form [formGroup]="loginForm">
+  <div class="form-group mt-5">
+  <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" formControlName="email" #email>
+   <div style="color:red;" *ngIf="loginForm.get('email').dirty && loginForm.get('email').touched && loginForm.get('email').value.length<6">email should be more than 6 character</div>
+    
+    </div>
+    <div class="form-group mt-5">
+    <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" formControlName="password" #password>
+   <div style="color:red;" *ngIf="loginForm.get('password').dirty && loginForm.get('password').touched && loginForm.get('password').value.length<6">password should be more than 6 character</div>
+   
+  </div>
+
+  <button type="submit" class="btn btn-outline-primary mb-2" (click)="login(email.value,password.value)">Login</button>
+</form>
+</div>
+</div>

@@ -1,0 +1,25 @@
+<body>
+<h1 class="col-md-4 offset-md-4">GENERATE REPORT</h1>
+<div class="col-md-4 offset-md-4 mt-3" style="color:white">
+<table>
+  <tr>
+  <th>Id</th>
+    <th>Category</th>
+    <th>Quantity</th>
+    <th>Price </th>
+    
+  </tr>
+  <tr *ngFor="let report of reports">
+  <td>{{report.id}}</td>
+ <td>{{report.category}}</td>
+ <td>{{report.quantity}}</td>
+ <td>Rs. {{report.totalPrice}}</td>
+  </tr>
+</table>
+</div>
+
+<div class="mt-5"> 
+<button class="btn" (click)="totalAsset()">Total Assets</button><h6>  = {{value}}</h6><br>
+<button class="btn mt-1"(click)="totalWorth()">Total Assets Worth</button><h6>  = Rs. {{sum}}/-</h6>
+</div>
+</body>

@@ -1,0 +1,27 @@
+<body>
+<h1 class="offset-md-4 col-md-4">USER ASSETS</h1>
+<div class="offset-md-2 col-md-8 mt-3" *ngIf="assets">
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Category</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Total Price</th>
+    <th>Additional Details</th>
+    <th>Request</th>
+  </tr>
+  <tr *ngFor="let asset of assets">
+  <td>{{asset.userId}}</td>
+    <td>{{asset.title}}</td>
+    <td>{{asset.category}}</td>
+    <td>{{asset.quantity}}</td>
+    <td>Rs. {{asset.price}}</td>
+    <td>Rs. {{asset.price*asset.quantity}}</td>
+    <td>{{asset.additionalDetails}}</td>
+    <td><button class="btn" (click)="request(asset.userId,asset.title,asset.category,asset.quantity,asset.price,asset.additionalDetails)">Request to admin</button></td>
+  </tr>
+</table>
+</div>
+</body>

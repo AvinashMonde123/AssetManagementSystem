@@ -1,0 +1,42 @@
+<body>
+<h1>ADD NEW ASSET</h1>
+<div class="card col-md-4 offset-md-4 mt-3"> 
+    <div class="card-body">     
+<form [formGroup]="addassetForm">
+                <div class="form-group">
+                 
+                     <input type="text" class="form-control" id="title" name="title" formControlName="title" #title placeholder="Enter title" >
+                            <div style="color:red;" *ngIf="addassetForm.get('title').dirty && addassetForm.get('title').touched && addassetForm.get('title').value.length<4">title name should be more than 4 character</div>
+                </div>
+                 <div class="form-group">
+                    
+                     <input type="text" class="form-control" id="category" name="category" formControlName="category" #category placeholder="Enter category" >
+                            <div style="color:red;" *ngIf="addassetForm.get('category').dirty && addassetForm.get('category').touched && addassetForm.get('category').value.length<4">category name should be more than 4 character</div>
+                </div>
+                <div class="form-group">
+                 
+                     <input type="number" class="form-control" id="quantity" name="quantity" formControlName="quantity" #quantity placeholder="Enter quantity" >
+                            <div style="color:red;" *ngIf="addassetForm.get('quantity').dirty && addassetForm.get('quantity').touched && addassetForm.get('quantity').value.length<1">quantity cannot be zero</div>
+                </div>
+                 <div class="form-group">
+                
+                     <input type="number" class="form-control" id="price" name="price" formControlName="price" #price placeholder="Enter price" >
+                            <div style="color:red;" *ngIf="addassetForm.get('price').dirty && addassetForm.get('price').touched && addassetForm.get('price').value.length<1">price cannot be zero</div>
+                </div>
+                <div class="form-group">
+               
+                <textarea id="additionalDetails" class="form-control" name="additionalDetails" rows="4" cols="50" formControlName="additionalDetails" #additionalDetails placeholder="Enter additional details">
+<div style="color:red;" *ngIf="addassetForm.get('additionalDetails').dirty && addassetForm.get('additionalDetails').touched">data must be entered</div>
+                  </textarea>
+               
+                </div>
+
+
+
+  <button type="submit" class="btn btn-outline-primary float-right" name="submit" (click)="addAsset(title.value,category.value,quantity.value,price.value,additionalDetails.value)" [disabled]="addassetForm.invalid">Add Asset</button> 
+            </form>
+        </div>
+    </div>
+</body>
+
+    

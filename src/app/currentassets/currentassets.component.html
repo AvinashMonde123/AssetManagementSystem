@@ -1,0 +1,29 @@
+<body>
+<h2>ASSET REQUEST FROM USER </h2>
+<div class="col-md-8 offset-md-2 mt-3" style="color:white">
+<table>
+  <tr >
+  <th>Id</th>
+    <th>Title</th>
+    <th>Category</th>
+    <th>Quantity</th>
+    <th>Price</th>
+     <th>TotalPrice</th>
+      <th>Details</th>
+      <th colspan="2" class="text-center">Request </th>
+  </tr>
+  <tr *ngFor="let asset of assets1">
+  <td>{{asset.id}}</td>
+ <td>{{asset.title}} </td>
+    <td>{{asset.category}}</td>
+    <td>{{asset.quantity}} </td>
+    <td>Rs. {{asset.price}}</td>
+     <td>Rs. {{asset.quantity*asset.price}}</td>
+      <td>{{asset.additionalDetails}}</td>
+      <td><button class="btn" id="button"(click)="accepted(asset.category,asset.quantity,asset.quantity*asset.price)">Accepted</button></td>
+      <td><button class="btn btn-danger" (click)="rejected(asset.id)">Rejected</button></td>
+  </tr>
+</table> 
+</div>
+</body>
+

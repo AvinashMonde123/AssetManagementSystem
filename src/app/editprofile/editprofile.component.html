@@ -1,0 +1,36 @@
+<body>
+<h1>UPDATE PROFILE</h1>
+<div class="bg"></div>
+<div class="card col-md-4 offset-md-4 mt-3"> 
+    <div class="card-body">     
+<form [formGroup]="updateForm">
+
+                <div class="form-group mt-5">
+        
+                     <input type="text" class="form-control" id="firstName" name="firstName" formControlName="firstName" #firstName placeholder="Enter first name" value="{{users.firstName}}">
+                            <div style="color:red;" *ngIf="updateForm.get('firstName').dirty && updateForm.get('firstName').touched && updateForm.get('firstName').value.length<6">first name should be more than 6 character</div>
+                
+                </div>
+                 <div class="form-group mt-5">
+                    
+                     <input type="text" class="form-control" id="lastName" name="lastName" formControlName="lastName" #lastName placeholder="Enter last name" value="{{users.lastName}}">
+                            <div style="color:red;" *ngIf="updateForm.get('lastName').dirty && updateForm.get('lastName').touched && updateForm.get('lastName').value.length<6">last name should be more than 6 character</div>
+                            
+                </div>
+                <div class="form-group mt-5">
+                    
+                     <input type="email" class="form-control" id="email" name="email" formControlName="email" #email placeholder="Enter email" value="{{users.email}}">
+                            <div style="color:red;" *ngIf="updateForm.get('email').dirty && updateForm.get('email').touched && updateForm.get('email').value.length<6">email should be more than 6 character</div>
+                               
+                </div>
+                 <div class="form-group mt-5">
+                   
+                     <input type="password" class="form-control" id="password" name="password" formControlName="password" #password placeholder="Enter password" value="{{users.password}}">
+                            <div style="color:red;" *ngIf="updateForm.get('password').dirty && updateForm.get('password').touched && updateForm.get('password').value.length<6">password should be more than 6 character</div>
+                             
+                </div>
+  <button type="submit" class="btn btn-outline-primary float-right" name="submit" (click)="update(id.value,firstName.value,lastName.value,email.value,password.value)" [disabled]="updateForm.invalid">Update</button> 
+            </form>
+        </div>
+    </div>
+</body>

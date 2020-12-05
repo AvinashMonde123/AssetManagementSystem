@@ -1,0 +1,32 @@
+<body>
+<h1>SIGN UP PAGE</h1>
+<div style="background-image: url('https://media.istockphoto.com/photos/businessman-working-with-financial-report-charts-business-analytics-picture-id1199010148?b=1&k=6&m=1199010148&s=170667a&w=0&h=KIaNeNAwqNQbVTuYjMVfabvPu-odZNlXuWPj-LguAsM=);">
+    <div class="card col-md-4 offset-md-4"> 
+        <div class="card-body">     
+            <form [formGroup]="signupForm">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="firstName" name="firstName" formControlName="firstName" #firstName placeholder="Enter first name" >
+                        <div style="color:red;" *ngIf="signupForm.get('firstName').dirty && signupForm.get('firstName').touched && signupForm.get('firstName').value.length<5">first name should be more than 5 character</div>             
+                </div>
+                <div class="form-group mt-5">   
+                    <input type="text" class="form-control" id="lastName" name="lastName" formControlName="lastName" #lastName placeholder="Enter last name" >
+                        <div style="color:red;" *ngIf="signupForm.get('lastName').dirty && signupForm.get('lastName').touched && signupForm.get('lastName').value.length<5">last name should be more than 5 character</div>     
+                </div>
+                <div class="form-group mt-5">
+                    <input type="email" class="form-control" id="email" name="email" formControlName="email" #email placeholder="Enter email" >
+                        <div style="color:red;" *ngIf="signupForm.get('email').dirty && signupForm.get('email').touched && signupForm.get('email').value.length<5">email should be more than 5 character</div>                
+                </div>
+                 <div class="form-group mt-5">
+                     <input type="password" class="form-control" id="password" name="password" formControlName="password" #password placeholder="Enter password" >
+                        <div style="color:red;" *ngIf="signupForm.get('password').dirty && signupForm.get('password').touched && signupForm.get('password').value.length<5">password should be more than 5 character</div>  
+                </div>
+                    <button type="submit" class="btn btn-outline-primary" name="submit" (click)="signin(firstName.value,lastName.value,email.value,password.value)" [disabled]="signupForm.invalid">Sign Up</button> 
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<footer>
+  <p>Author: Avinash Bhalchandra Monde<br>
+  <a href="avinashmonde.1998@gmail.com">avinashmonde.1998@gmail.com</a></p>
+</footer>

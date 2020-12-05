@@ -1,0 +1,23 @@
+<body>
+<h1>LOGIN PAGE</h1>
+<div class="card col-md-4 offset-md-4">  
+  <div class="card-body">
+    <form [formGroup]="loginForm" >
+      <div class="form-group">
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" formControlName="email" #email  >
+          <div style="color:red;" *ngIf="loginForm.get('email').dirty && loginForm.get('email').touched && loginForm.get('email').value.length<5">email should be more than 5 character</div>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" formControlName="password" #password >
+          <div style="color:red;" *ngIf="loginForm.get('password').dirty && loginForm.get('password').touched && loginForm.get('password').value.length<5">password should be more than 5 character</div>
+      </div>
+        <button type="submit" class="btn btn-outline-primary mb-2" (click)="login(email.value,password.value)" [disabled]="loginForm.invalid">Login</button>
+        <button type="submit" class="btn btn-outline-primary mb-2 ml-2" (click)="register()">Register</button>
+    </form>
+  </div>
+</div>
+</body>
+<footer>
+  <p>Author: Avinash Bhalchandra Monde<br>
+  <a href="avinashmonde.1998@gmail.com">avinashmonde.1998@gmail.com</a></p>
+</footer>
